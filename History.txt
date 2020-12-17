@@ -1,0 +1,8 @@
+aws s3api create-bucket --bucket viktor-super-bucket-v1 --region us-east-2  --create-bucket-configuration LocationConstraint=us-east-2 
+aws s3api put-bucket-policy --bucket viktor-super-bucket-v1 --policy file://D:\University\HT\bucket_policy.json
+aws s3 sync D:\University\HT s3://viktor-super-bucket-v1/
+aws s3 website s3://viktor-super-bucket-v1/ --index-document index.html --error-document error.html
+
+
+
+http://viktor-super-bucket-v1.s3.amazonaws.com
